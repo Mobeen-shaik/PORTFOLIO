@@ -1,0 +1,2698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shaik Mobeen | Portfolio</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+            line-height: 1.6;
+            transition: 0.3s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid #e5e7eb;
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #2563eb;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #475569;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .theme-button,
+        .menu-button {
+            width: 40px;
+            height: 40px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            cursor: pointer;
+
+            font-size: 17px;
+        }
+
+        .menu-button {
+            display: none;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+
+            padding: 130px 8% 80px;
+
+            display: grid;
+
+            grid-template-columns: 1.1fr 0.9fr;
+
+            align-items: center;
+
+            gap: 60px;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    #dbeafe,
+                    transparent 35%
+                );
+        }
+
+        .hero-small {
+            color: #2563eb;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+
+            line-height: 1.1;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero h2 {
+            color: #475569;
+
+            font-size: 25px;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+
+            color: #64748b;
+
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 13px 22px;
+
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #2563eb;
+
+            color: white;
+        }
+
+        .primary:hover {
+            background: #1d4ed8;
+
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            background: white;
+
+            border: 1px solid #cbd5e1;
+        }
+
+        .secondary:hover {
+            border-color: #2563eb;
+
+            color: #2563eb;
+        }
+
+        .social {
+            display: flex;
+
+            gap: 15px;
+
+            margin-top: 30px;
+        }
+
+        .social a {
+            width: 45px;
+            height: 45px;
+
+            display: grid;
+
+            place-items: center;
+
+            background: white;
+
+            color: #2563eb;
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            background: #2563eb;
+
+            color: white;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* =====================================================
+           CODE CARD
+        ===================================================== */
+
+        .code-box {
+            width: 100%;
+
+            max-width: 480px;
+
+            margin: auto;
+
+            background: #0f172a;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 30px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        .code-top {
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding-left: 18px;
+
+            background: #111827;
+        }
+
+        .code-top span {
+            width: 12px;
+
+            height: 12px;
+
+            background: #64748b;
+
+            border-radius: 50%;
+        }
+
+        .code {
+            padding: 30px;
+
+            color: #cbd5e1;
+
+            font-family: Consolas, monospace;
+
+            font-size: 15px;
+
+            line-height: 2;
+        }
+
+        .indent {
+            padding-left: 25px;
+        }
+
+        .indent2 {
+            padding-left: 50px;
+        }
+
+        .purple {
+            color: #c084fc;
+        }
+
+        .green {
+            color: #86efac;
+        }
+
+        .yellow {
+            color: #facc15;
+        }
+
+
+        /* =====================================================
+           GENERAL SECTION
+        ===================================================== */
+
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .section-heading small {
+            color: #2563eb;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+
+            margin-top: 8px;
+        }
+
+        .section-heading h2 span {
+            color: #2563eb;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 18px;
+
+            border: 1px solid #e5e7eb;
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 14px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 22px;
+
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #64748b;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        #skills {
+            background: #f1f5f9;
+        }
+
+        .skills {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .skill {
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 16px;
+
+            border: 1px solid #e2e8f0;
+        }
+
+        .skill i {
+            font-size: 35px;
+
+            color: #2563eb;
+
+            margin-bottom: 15px;
+        }
+
+        .skill h3 {
+            margin-bottom: 15px;
+        }
+
+        .bar {
+            height: 7px;
+
+            background: #e2e8f0;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+        }
+
+        .bar span {
+            display: block;
+
+            height: 100%;
+
+            background: #2563eb;
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .timeline {
+            max-width: 900px;
+
+            margin: auto;
+
+            position: relative;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 18px;
+
+            top: 0;
+
+            bottom: 0;
+
+            width: 2px;
+
+            background: #bfdbfe;
+        }
+
+        .timeline-item {
+            position: relative;
+
+            padding-left: 65px;
+
+            margin-bottom: 40px;
+        }
+
+        .dot {
+            position: absolute;
+
+            left: 8px;
+
+            top: 5px;
+
+            width: 22px;
+
+            height: 22px;
+
+            background: #2563eb;
+
+            border: 5px solid #dbeafe;
+
+            border-radius: 50%;
+        }
+
+        .timeline-content {
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 15px;
+
+            border: 1px solid #e5e7eb;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .date {
+            color: #2563eb;
+
+            font-weight: 700;
+        }
+
+        .timeline-content h3 {
+            margin-top: 8px;
+        }
+
+        .timeline-content h4 {
+            color: #64748b;
+
+            margin: 5px 0;
+        }
+
+        .timeline-content p {
+            color: #64748b;
+        }
+
+
+        /* =====================================================
+           PROJECTS
+        ===================================================== */
+
+        #projects {
+            background: #f1f5f9;
+        }
+
+        .projects {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 28px;
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+        .project {
+            position: relative;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 20px;
+
+            border: 1px solid #e2e8f0;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-number {
+            position: absolute;
+
+            top: 10px;
+
+            right: 20px;
+
+            font-size: 55px;
+
+            font-weight: 900;
+
+            color: #eff6ff;
+        }
+
+        .project-icon {
+            width: 60px;
+
+            height: 60px;
+
+            display: grid;
+
+            place-items: center;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            border-radius: 15px;
+
+            font-size: 24px;
+
+            margin-bottom: 22px;
+
+            position: relative;
+        }
+
+        .project h3 {
+            font-size: 22px;
+
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #64748b;
+
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 25px;
+        }
+
+        .tags span {
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        /*
+            PROJECT BUTTON
+            "Live Demo" has been completely removed.
+            Every project now says "View Project".
+        */
+
+        .view-project {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: #2563eb;
+
+            font-weight: 800;
+
+            transition: 0.3s;
+        }
+
+        .view-project:hover {
+            gap: 14px;
+        }
+
+
+        /* =====================================================
+           CERTIFICATIONS
+        ===================================================== */
+
+        .certificates {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            gap: 18px;
+        }
+
+        .certificate {
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            border: 1px solid #e2e8f0;
+        }
+
+        .certificate-icon {
+            width: 55px;
+
+            height: 55px;
+
+            flex-shrink: 0;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 13px;
+
+            background: #eff6ff;
+
+            color: #2563eb;
+
+            font-size: 22px;
+        }
+
+        .certificate p {
+            color: #64748b;
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        #contact {
+            background: #0f172a;
+
+            color: white;
+        }
+
+        #contact .section-heading h2 {
+            color: white;
+        }
+
+        .contact {
+            max-width: 1050px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+        }
+
+        .contact-left h3 {
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-left > p {
+            color: #94a3b8;
+
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            margin-bottom: 22px;
+        }
+
+        .contact-item i {
+            width: 45px;
+
+            height: 45px;
+
+            display: grid;
+
+            place-items: center;
+
+            background: #1e293b;
+
+            color: #60a5fa;
+
+            border-radius: 10px;
+        }
+
+        .contact-item small {
+            display: block;
+
+            color: #94a3b8;
+        }
+
+        .contact-item a {
+            color: white;
+        }
+
+        .contact-box {
+            background: #1e293b;
+
+            border-radius: 20px;
+
+            padding: 50px;
+
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .contact-icon {
+            width: 70px;
+
+            height: 70px;
+
+            display: grid;
+
+            place-items: center;
+
+            background: #2563eb;
+
+            border-radius: 50%;
+
+            font-size: 28px;
+
+            margin-bottom: 20px;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+
+            margin: 10px 0 25px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            background: #020617;
+
+            color: #94a3b8;
+
+            padding: 30px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .footer-name {
+            color: white;
+
+            font-size: 20px;
+
+            font-weight: 800;
+        }
+
+        .footer-name span {
+            color: #60a5fa;
+        }
+
+        .footer-social {
+            display: flex;
+
+            gap: 15px;
+        }
+
+        .footer-social a {
+            color: #60a5fa;
+
+            font-size: 20px;
+        }
+
+
+        /* =====================================================
+           DARK MODE
+        ===================================================== */
+
+        body.dark {
+            background: #020617;
+
+            color: #e2e8f0;
+        }
+
+        body.dark header {
+            background: rgba(2, 6, 23, 0.95);
+
+            border-color: #1e293b;
+        }
+
+        body.dark nav a {
+            color: #cbd5e1;
+        }
+
+        body.dark .hero {
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    #172554,
+                    transparent 35%
+                );
+        }
+
+        body.dark .hero h2 {
+            color: #cbd5e1;
+        }
+
+        body.dark .hero-text {
+            color: #94a3b8;
+        }
+
+        body.dark .secondary {
+            background: #0f172a;
+
+            color: white;
+
+            border-color: #334155;
+        }
+
+        body.dark .social a {
+            background: #0f172a;
+        }
+
+        body.dark .card,
+        body.dark .skill,
+        body.dark .timeline-content,
+        body.dark .project,
+        body.dark .certificate {
+            background: #0f172a;
+
+            border-color: #1e293b;
+        }
+
+        body.dark .card p,
+        body.dark .project p,
+        body.dark .timeline-content p,
+        body.dark .timeline-content h4 {
+            color: #94a3b8;
+        }
+
+        body.dark #skills,
+        body.dark #projects {
+            background: #020617;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-buttons,
+            .social {
+                justify-content: center;
+            }
+
+            .about,
+            .skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 750px) {
+
+            header {
+                padding: 0 5%;
+            }
+
+            nav {
+                position: absolute;
+
+                top: 75px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: white;
+
+                display: none;
+
+                flex-direction: column;
+
+                gap: 0;
+
+                border-bottom: 1px solid #e5e7eb;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 15px 7%;
+
+                border-bottom: 1px solid #f1f5f9;
+            }
+
+            .menu-button {
+                display: block;
+            }
+
+            .hero {
+                padding-left: 5%;
+
+                padding-right: 5%;
+            }
+
+            section {
+                padding-left: 5%;
+
+                padding-right: 5%;
+            }
+
+            .about,
+            .skills,
+            .projects,
+            .contact {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            footer {
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 15px;
+            }
+
+        }
+
+
+        @media (max-width: 480px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .code {
+                padding: 20px;
+
+                font-size: 12px;
+            }
+
+            .project,
+            .card,
+            .skill {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header>
+
+    <div class="logo">
+        Shaik <span>Mobeen</span>
+    </div>
+
+
+    <nav id="navigation">
+
+        <a href="#home">Home</a>
+
+        <a href="#about">About</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#certifications">Certifications</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <div class="nav-buttons">
+
+        <button
+            class="theme-button"
+            id="themeButton"
+            title="Dark Mode"
+        >
+            <i class="fas fa-moon"></i>
+        </button>
+
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            title="Menu"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HOME
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="hero-small">
+            HELLO, I'M
+        </p>
+
+
+        <h1>
+            Shaik <span>Mobeen</span>
+        </h1>
+
+
+        <h2>
+            Computer Science & Engineering Student
+        </h2>
+
+
+        <p class="hero-text">
+
+            Passionate about software development, web technologies,
+            problem solving and building practical applications.
+            I enjoy learning new technologies and transforming ideas
+            into useful digital experiences.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#projects"
+                class="button primary"
+            >
+
+                View My Projects
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="Shaik-Mobeen-Resume.pdf"
+                class="button secondary"
+                download
+            >
+
+                <i class="fas fa-download"></i>
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+
+        <div class="social">
+
+            <a
+                href="https://www.linkedin.com/in/shaik-mobeen-4357aa304/"
+                target="_blank"
+            >
+
+                <i class="fab fa-linkedin"></i>
+
+            </a>
+
+
+            <a href="mailto:mobeen.sk08@gmail.com">
+
+                <i class="fas fa-envelope"></i>
+
+            </a>
+
+
+            <a href="tel:6281377709">
+
+                <i class="fas fa-phone"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CODE WINDOW -->
+
+    <div class="code-box">
+
+        <div class="code-top">
+
+            <span></span>
+
+            <span></span>
+
+            <span></span>
+
+        </div>
+
+
+        <div class="code">
+
+            <p>
+
+                <span class="purple">
+                    const
+                </span>
+
+                developer = {
+
+            </p>
+
+
+            <p class="indent">
+
+                name:
+
+                <span class="green">
+                    "Shaik Mobeen"
+                </span>,
+
+            </p>
+
+
+            <p class="indent">
+
+                degree:
+
+                <span class="green">
+                    "B.Tech CSE"
+                </span>,
+
+            </p>
+
+
+            <p class="indent">
+
+                cgpa:
+
+                <span class="yellow">
+                    8.48
+                </span>,
+
+            </p>
+
+
+            <p class="indent">
+
+                skills: [
+
+            </p>
+
+
+            <p class="indent2">
+                "Java",
+            </p>
+
+
+            <p class="indent2">
+                "HTML",
+            </p>
+
+
+            <p class="indent2">
+                "CSS",
+            </p>
+
+
+            <p class="indent2">
+                "SQL"
+            </p>
+
+
+            <p class="indent">
+                ]
+            </p>
+
+
+            <p>
+                };
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+
+    <div class="section-heading">
+
+        <small>
+            GET TO KNOW ME
+        </small>
+
+        <h2>
+            About <span>Me</span>
+        </h2>
+
+    </div>
+
+
+    <div class="about">
+
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fas fa-user"></i>
+
+            </div>
+
+
+            <h3>
+                Who I Am
+            </h3>
+
+
+            <p>
+
+                I am a Computer Science and Engineering student
+                with a strong interest in software development
+                and web technologies.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fas fa-bullseye"></i>
+
+            </div>
+
+
+            <h3>
+                Career Objective
+            </h3>
+
+
+            <p>
+
+                Seeking an entry-level position in a progressive,
+                growth-oriented organization where I can leverage
+                my technical knowledge, adapt to new challenges
+                and contribute to innovative solutions.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="icon">
+
+                <i class="fas fa-code"></i>
+
+            </div>
+
+
+            <h3>
+                What I Do
+            </h3>
+
+
+            <p>
+
+                I develop web applications and programming solutions
+                using HTML, CSS, Java, SQL and Python fundamentals.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section id="skills">
+
+    <div class="section-heading">
+
+        <small>
+            MY TECHNOLOGIES
+        </small>
+
+
+        <h2>
+            Technical <span>Skills</span>
+        </h2>
+
+    </div>
+
+
+    <div class="skills">
+
+
+        <div class="skill">
+
+            <i class="fab fa-java"></i>
+
+            <h3>
+                Java
+            </h3>
+
+            <div class="bar">
+
+                <span style="width:85%;"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="skill">
+
+            <i class="fab fa-html5"></i>
+
+            <h3>
+                HTML
+            </h3>
+
+            <div class="bar">
+
+                <span style="width:90%;"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="skill">
+
+            <i class="fab fa-css3-alt"></i>
+
+            <h3>
+                CSS
+            </h3>
+
+            <div class="bar">
+
+                <span style="width:85%;"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="skill">
+
+            <i class="fas fa-database"></i>
+
+            <h3>
+                SQL
+            </h3>
+
+            <div class="bar">
+
+                <span style="width:75%;"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="skill">
+
+            <i class="fab fa-python"></i>
+
+            <h3>
+                Python Basics
+            </h3>
+
+            <div class="bar">
+
+                <span style="width:65%;"></span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="skill">
+
+            <i class="fas fa-laptop-code"></i>
+
+            <h3>
+                Web Development
+            </h3>
+
+            <div class="bar">
+
+                <span style="width:85%;"></span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION & INTERNSHIP
+===================================================== -->
+
+<section id="education">
+
+    <div class="section-heading">
+
+        <small>
+            MY ACADEMIC JOURNEY
+        </small>
+
+
+        <h2>
+            Education & <span>Internship</span>
+        </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <!-- BTECH -->
+
+        <div class="timeline-item">
+
+            <div class="dot"></div>
+
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    2022 – 2026
+                </span>
+
+
+                <h3>
+                    B.Tech – Computer Science & Engineering
+                </h3>
+
+
+                <h4>
+                    P.B.R Visvodaya Institute of Technology & Science
+                </h4>
+
+
+                <p>
+
+                    CGPA:
+                    <strong>
+                        8.48 / 10
+                    </strong>
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INTERMEDIATE -->
+
+        <div class="timeline-item">
+
+            <div class="dot"></div>
+
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    2020 – 2022
+                </span>
+
+
+                <h3>
+                    Intermediate – MPC
+                </h3>
+
+
+                <h4>
+                    Narayana Junior College
+                </h4>
+
+
+                <p>
+
+                    Marks:
+                    <strong>
+                        827 / 1000
+                    </strong>
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SSC -->
+
+        <div class="timeline-item">
+
+            <div class="dot"></div>
+
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    2019 – 2020
+                </span>
+
+
+                <h3>
+                    SSC
+                </h3>
+
+
+                <h4>
+                    Bhasyam High School
+                </h4>
+
+
+                <p>
+
+                    Marks:
+                    <strong>
+                        544 / 600
+                    </strong>
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INTERNSHIP -->
+
+        <div class="timeline-item">
+
+            <div class="dot"></div>
+
+
+            <div class="timeline-content">
+
+                <span class="date">
+                    May 2024 – June 2024
+                </span>
+
+
+                <h3>
+                    Java Full Stack Internship
+                </h3>
+
+
+                <h4>
+                    Internship Certification Course
+                </h4>
+
+
+                <p>
+
+                    Gained hands-on experience in frontend and
+                    backend technologies including Java,
+                    Spring Boot and React.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+    <div class="section-heading">
+
+        <small>
+            MY WORK
+        </small>
+
+
+        <h2>
+            Featured <span>Projects</span>
+        </h2>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <!-- =================================================
+             PROJECT 1
+        ================================================== -->
+
+        <div class="project">
+
+            <div class="project-number">
+                01
+            </div>
+
+
+            <div class="project-icon">
+
+                <i class="fas fa-table"></i>
+
+            </div>
+
+
+            <h3>
+                Information Tables
+            </h3>
+
+
+            <p>
+
+                A collection of different table layouts for
+                displaying structured information such as
+                students, employees and products.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span>
+                    HTML
+                </span>
+
+                <span>
+                    CSS
+                </span>
+
+                <span>
+                    JavaScript
+                </span>
+
+            </div>
+
+
+            <!-- VIEW PROJECT -->
+
+            <a
+                href="https://mobeen-shaik.github.io/different-type-of-Tables/"
+                target="_blank"
+                class="view-project"
+            >
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROJECT 2
+        ================================================== -->
+
+        <div class="project">
+
+            <div class="project-number">
+                02
+            </div>
+
+
+            <div class="project-icon">
+
+                <i class="fas fa-clipboard-list"></i>
+
+            </div>
+
+
+            <h3>
+                Course Registration Form
+            </h3>
+
+
+            <p>
+
+                A responsive course registration interface
+                designed to collect student information and
+                course selections through an organized form.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span>
+                    HTML
+                </span>
+
+                <span>
+                    CSS
+                </span>
+
+                <span>
+                    Forms
+                </span>
+
+            </div>
+
+
+            <!-- VIEW PROJECT -->
+
+            <a
+                href="https://mobeen-shaik.github.io/Course-reg-form/"
+                target="_blank"
+                class="view-project"
+            >
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROJECT 3
+        ================================================== -->
+
+        <div class="project">
+
+            <div class="project-number">
+                03
+            </div>
+
+
+            <div class="project-icon">
+
+                <i class="fas fa-list-check"></i>
+
+            </div>
+
+
+            <h3>
+                Interactive Lists
+            </h3>
+
+
+            <p>
+
+                Interactive list management pages that allow
+                users to add and delete records and work with
+                different types of lists.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span>
+                    HTML
+                </span>
+
+                <span>
+                    CSS
+                </span>
+
+                <span>
+                    JavaScript
+                </span>
+
+            </div>
+
+
+            <!-- VIEW PROJECT -->
+
+            <a
+                href="https://mobeen-shaik.github.io/Types-of-Lists/"
+                target="_blank"
+                class="view-project"
+            >
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROJECT 4
+        ================================================== -->
+
+        <div class="project">
+
+            <div class="project-number">
+                04
+            </div>
+
+
+            <div class="project-icon">
+
+                <i class="fas fa-plane-departure"></i>
+
+            </div>
+
+
+            <h3>
+                Incredible India Travel Blog
+            </h3>
+
+
+            <p>
+
+                A travel-focused website showcasing popular
+                destinations across India with destination
+                information and visual content.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span>
+                    HTML
+                </span>
+
+                <span>
+                    CSS
+                </span>
+
+                <span>
+                    Travel
+                </span>
+
+            </div>
+
+
+            <!-- VIEW PROJECT -->
+
+            <a
+                href="https://mobeen-shaik.github.io/Travel-plan/"
+                target="_blank"
+                class="view-project"
+            >
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PROJECT 5
+        ================================================== -->
+
+        <div class="project">
+
+            <div class="project-number">
+                05
+            </div>
+
+
+            <div class="project-icon">
+
+                <i class="fas fa-photo-video"></i>
+
+            </div>
+
+
+            <h3>
+                Audio & Video Gallery
+            </h3>
+
+
+            <p>
+
+                A multimedia website demonstrating audio and
+                video playback using HTML media elements with
+                a music-focused interface.
+
+            </p>
+
+
+            <div class="tags">
+
+                <span>
+                    HTML
+                </span>
+
+                <span>
+                    CSS
+                </span>
+
+                <span>
+                    Multimedia
+                </span>
+
+            </div>
+
+
+            <!-- VIEW PROJECT -->
+
+            <a
+                href="https://mobeen-shaik.github.io/Audio-and-Video/"
+                target="_blank"
+                class="view-project"
+            >
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CERTIFICATIONS
+===================================================== -->
+
+<section id="certifications">
+
+    <div class="section-heading">
+
+        <small>
+            ACHIEVEMENTS
+        </small>
+
+
+        <h2>
+            Certifications
+        </h2>
+
+    </div>
+
+
+    <div class="certificates">
+
+
+        <div class="certificate">
+
+            <div class="certificate-icon">
+
+                <i class="fas fa-certificate"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Java Programming
+                </h3>
+
+
+                <p>
+                    CodeTantra
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="certificate">
+
+            <div class="certificate-icon">
+
+                <i class="fas fa-code"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    HTML-CSS-JavaScript Practice Sessions
+                </h3>
+
+
+                <p>
+                    CodeTantra
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="certificate">
+
+            <div class="certificate-icon">
+
+                <i class="fab fa-python"></i>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Python Full Stack Virtual Internship
+                </h3>
+
+
+                <p>
+                    Supreme Info Solutions Pvt. Ltd.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="section-heading">
+
+        <small>
+            GET IN TOUCH
+        </small>
+
+
+        <h2>
+            Let's <span>Connect</span>
+        </h2>
+
+    </div>
+
+
+    <div class="contact">
+
+
+        <div class="contact-left">
+
+            <h3>
+                Let's work together
+            </h3>
+
+
+            <p>
+
+                I am interested in entry-level software
+                development opportunities and projects where
+                I can learn, contribute and grow.
+
+            </p>
+
+
+            <div class="contact-item">
+
+                <i class="fas fa-envelope"></i>
+
+
+                <div>
+
+                    <small>
+                        Email
+                    </small>
+
+
+                    <a href="mailto:mobeen.sk08@gmail.com">
+
+                        mobeen.sk08@gmail.com
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fas fa-phone"></i>
+
+
+                <div>
+
+                    <small>
+                        Phone
+                    </small>
+
+
+                    <a href="tel:6281377709">
+
+                        6281377709
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <i class="fab fa-linkedin"></i>
+
+
+                <div>
+
+                    <small>
+                        LinkedIn
+                    </small>
+
+
+                    <a
+                        href="https://www.linkedin.com/in/shaik-mobeen-4357aa304/"
+                        target="_blank"
+                    >
+
+                        LinkedIn Profile
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="contact-box">
+
+            <div class="contact-icon">
+
+                <i class="fas fa-paper-plane"></i>
+
+            </div>
+
+
+            <h3>
+                Have an opportunity?
+            </h3>
+
+
+            <p>
+                Feel free to reach out to me.
+            </p>
+
+
+            <a
+                href="mailto:mobeen.sk08@gmail.com"
+                class="button primary"
+            >
+
+                Send Me an Email
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-name">
+
+        Shaik <span>Mobeen</span>
+
+    </div>
+
+
+    <p>
+        © 2026 Shaik Mobeen. All Rights Reserved.
+    </p>
+
+
+    <div class="footer-social">
+
+        <a
+            href="https://www.linkedin.com/in/shaik-mobeen-4357aa304/"
+            target="_blank"
+        >
+
+            <i class="fab fa-linkedin"></i>
+
+        </a>
+
+
+        <a href="mailto:mobeen.sk08@gmail.com">
+
+            <i class="fas fa-envelope"></i>
+
+        </a>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
+
+    const menuButton =
+        document.getElementById("menuButton");
+
+    const navigation =
+        document.getElementById("navigation");
+
+
+    menuButton.addEventListener("click", function () {
+
+        navigation.classList.toggle("active");
+
+
+        const icon =
+            menuButton.querySelector("i");
+
+
+        if (navigation.classList.contains("active")) {
+
+            icon.classList.remove("fa-bars");
+
+            icon.classList.add("fa-xmark");
+
+        } else {
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       CLOSE MOBILE MENU
+    ===================================================== */
+
+    document
+        .querySelectorAll("#navigation a")
+        .forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navigation.classList.remove("active");
+
+
+                const icon =
+                    menuButton.querySelector("i");
+
+
+                icon.classList.remove("fa-xmark");
+
+                icon.classList.add("fa-bars");
+
+            });
+
+        });
+
+
+
+    /* =====================================================
+       DARK MODE
+    ===================================================== */
+
+    const themeButton =
+        document.getElementById("themeButton");
+
+
+    themeButton.addEventListener("click", function () {
+
+        document.body.classList.toggle("dark");
+
+
+        const icon =
+            themeButton.querySelector("i");
+
+
+        if (
+            document.body.classList.contains("dark")
+        ) {
+
+            icon.classList.remove("fa-moon");
+
+            icon.classList.add("fa-sun");
+
+
+            localStorage.setItem(
+                "portfolioTheme",
+                "dark"
+            );
+
+        } else {
+
+            icon.classList.remove("fa-sun");
+
+            icon.classList.add("fa-moon");
+
+
+            localStorage.setItem(
+                "portfolioTheme",
+                "light"
+            );
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       LOAD SAVED THEME
+    ===================================================== */
+
+    const savedTheme =
+        localStorage.getItem("portfolioTheme");
+
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark");
+
+
+        const icon =
+            themeButton.querySelector("i");
+
+
+        icon.classList.remove("fa-moon");
+
+        icon.classList.add("fa-sun");
+
+    }
+
+
+
+    /* =====================================================
+       SCROLL ANIMATION
+    ===================================================== */
+
+    const animatedElements =
+        document.querySelectorAll(
+            ".card, .skill, .project, .timeline-item, .certificate"
+        );
+
+
+    const observer =
+        new IntersectionObserver(
+            function (entries) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.style.opacity = "1";
+
+                        entry.target.style.transform =
+                            "translateY(0)";
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.1
+            }
+        );
+
+
+    animatedElements.forEach(function (element) {
+
+        element.style.opacity = "0";
+
+        element.style.transform =
+            "translateY(30px)";
+
+        element.style.transition =
+            "all 0.7s ease";
+
+        observer.observe(element);
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
